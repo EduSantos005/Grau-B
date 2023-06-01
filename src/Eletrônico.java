@@ -1,4 +1,4 @@
-package trabalho;
+
 
 public class Eletrônico extends Produto {
 	
