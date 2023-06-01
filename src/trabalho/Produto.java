@@ -48,6 +48,10 @@ public class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+	
+	public void infProduto() {
+		System.out.println("Produto: " + nome + " - Valor: " + valor);
+	}
 
 	@Override
 	public String toString() {
