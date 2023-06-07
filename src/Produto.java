@@ -1,6 +1,6 @@
 
 
-public class Produto {
+public abstract class Produto {
 
 	private String nome;
 	private double valor;
@@ -55,8 +55,8 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Nome= " + nome + " - Valor= R$ " + String.format("%.2f", valor) + "0 - Código= " + codigo + " - Quantidade= " + quantidade;
+		return codigo + " - Nome= " + nome + " - Valor= R$ " + String.format("%.2f", valor) + " - Quantidade= " + quantidade;
 	}
-	
+
 	
 }

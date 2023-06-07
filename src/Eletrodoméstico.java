@@ -23,7 +23,7 @@ public class Eletrodoméstico extends Produto {
 
 	@Override
 	public String toString() {
-		return "\nEletrodoméstico: "+ super.toString() + " - descricao= " + descricao;
+		return "\nEletrodoméstico: "+ super.toString() + " - Descrição= " + descricao;
 	}
 	
 }

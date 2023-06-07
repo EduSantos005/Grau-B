@@ -23,7 +23,7 @@ public class Eletrônico extends Produto {
 
 	@Override
 	public String toString() {
-		return "\nEletrônico: "+ super.toString() + " - descricao= " + descricao;
+		return "\nEletrônico: "+ super.toString() + " - Descrição= " + descricao;
 	}
 	
 	

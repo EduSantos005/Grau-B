@@ -30,7 +30,7 @@ public class Livro extends Produto {
 
 	@Override
 	public String toString() {
-		return "\nLivro: " + super.toString() +  " - autor= " + autor + " - genero= " + genero;
+		return "\nLivro: " + super.toString() +  " - Autor= " + autor + " - Gênero= " + genero;
 	}
 	
 	
