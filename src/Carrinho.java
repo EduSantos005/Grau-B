@@ -50,12 +50,12 @@ public class Carrinho {
 		product.infProduto();
 	}
 }		
- System.out.println("Valor Total: R$" + valor);
+ System.out.println("Valor Total: R$ " + String.format("%.2f", valor));
 	}
 	
 	@Override
 	public String toString() {
-		return "Itens Selecionados:" + carrinho + "\nValor Total: R$" + valor;
+		return "Itens Selecionados:" + carrinho + "\nValor Total: R$ " + String.format("%.2f", valor);
 	}
 
 }

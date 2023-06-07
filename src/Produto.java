@@ -50,12 +50,12 @@ public class Produto {
 	}
 	
 	public void infProduto() {
-		System.out.println("Produto: " + nome + " - Valor: " + valor);
+		System.out.println("Produto: " + nome + " - Valor: R$ " + String.format("%.2f", valor));
 	}
 
 	@Override
 	public String toString() {
-		return "Nome= " + nome + " - Valor= R$" + valor + "0 - Código= " + codigo + " - Quantidade= " + quantidade;
+		return "Nome= " + nome + " - Valor= R$ " + String.format("%.2f", valor) + "0 - Código= " + codigo + " - Quantidade= " + quantidade;
 	}
 	
 	
