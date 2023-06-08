@@ -57,9 +57,9 @@ public class Carrinho {
 		return valor;
 	}
 
-	public boolean removerProdutoCarrinho() {
+	//public boolean removerProdutoCarrinho() {
 
-	}
+	//}
 
 	// #endregion
 
