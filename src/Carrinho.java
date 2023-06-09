@@ -6,68 +6,47 @@ public class Carrinho {
 	private ArrayList<Produto> carrinho;
 	private Estoque estoque;
 
-	// #region fucncoes
+	// #region funcoes
 
 	/**
-	 * Funcao que visa adicionar um produto no carrinho, verificando a quantidade
-	 * atual do estoque e diminuindo a quantidade que o usuario digitou, se a
-	 * quantidade for menor que 0 o produto e excluido do estoque
-	 * @return 
-	 * @author ulisses953
+	 * Adiciona o produto no carrinho
+	 * @param produto produto a ser retirado no estoque
+	 * @param quantidade quantidade a ser tirada no estoque
+	 * @return
 	 */
-
-	public boolean adicionarCarrinho(int codigo, int quantidade) {
+	private boolean addicionar(Produto produto, int quantidade) {
 		try {
-			Produto produto = estoque.localizaProduto(codigo);
-			if (produto != null) {
-				produto.setQuantidade(produto.getQuantidade() - quantidade);
-				if (0 <= produto.getQuantidade()) {
-					produto.setQuantidade(quantidade);
-					carrinho.add(produto);
-					estoque.updateProdutoEstoque(produto.getCodigo(), produto);
-					return true;
-				} else {
-					if (0 > produto.getQuantidade()) {
-						estoque.removerProdutoEstoque(produto);
-						produto.setQuantidade(quantidade);
-						carrinho.add(produto);
-						return true;
-					}
-					return false;
-				}
-			} else {
-				return false;
+			// verifica se existe o produto no estoque
+			if (null == estoque.localizarProduto(produto.getCodigo())) {
+				throw new Exception("Produto nao esta localiado no estoque");
 			}
+
+			// verificando se o produto possui a quantidade desejada a ser retirada
+			if (0 > produto.getQuantidade() - quantidade) {
+				throw new Exception("Valor de quantidade invalida");
+			}
+			// adicionar no carrinho
+			produto.setQuantidade(produto.getQuantidade() - quantidade);
+			carrinho.add(produto);
+
+			// atualiando o estoque
+			if (produto.getQuantidade() == 0) {
+				estoque.excluir(produto.getCodigo());
+			} else {
+				estoque.update(produto);
+			}
+
+			return true;
+
 		} catch (Exception e) {
+			System.err.println(e);
 			return false;
-		}
-
+		}		
 	}
-
-	/**
-	 * funcao que visa calcular o valor total do carrinho
-	 * 
-	 * @return retorna o valor total
-	 */
-	public double verValorTotal() {
-		double valor = 0;
-		for (Produto produto : carrinho) {
-			valor += produto.getValor() * produto.getQuantidade();
-		}
-		return valor;
-	}
-
-	//public boolean removerProdutoCarrinho() {
-
-	//}
-
-	// #endregion
-
-	// #region constructor
-
-	public Estoque verEstoque() {
-		return estoque;
+	private boolean remove(int codigo){
+		
 	}
 
 	// #endregion
+
 }
