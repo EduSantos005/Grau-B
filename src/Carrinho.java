@@ -14,10 +14,10 @@ public class Carrinho {
 	 * @param quantidade quantidade a ser tirada no estoque
 	 * @return
 	 */
-	private boolean addicionar(Produto produto, int quantidade) {
+	private boolean adicionar(Produto produto, int quantidade) {
 		try {
 			// verifica se existe o produto no estoque
-			if (null == estoque.localizarProduto(produto.getCodigo())) {
+			if (null == estoque.localizar(produto.getCodigo())) {
 				throw new Exception("Produto nao esta localiado no estoque");
 			}
 
@@ -43,8 +43,64 @@ public class Carrinho {
 			return false;
 		}		
 	}
-	private boolean remove(int codigo){
+
+	/**
+	 * Remove produto do carrinho
+	 * @param codigo
+	 * @return
+	 */
+	public boolean remove(int codigo){
+		try {
+			//localiza o mesmo produto tanto no carrinho como no estoque
+			Produto produtoCarrinho = localizar(codigo);
+			Produto produtoEstoque = estoque.localizar(codigo);
+
+			//verifica se ha produto no carrinho
+			if (produtoCarrinho == null) {
+				throw new Exception("Produto nao localizado no carrinho");
+			}
+
+			//verifica se ha produto no Estoque
+			if (produtoEstoque == null) {
+				throw new Exception("Produto nao localizado no carrinho");
+			}
+			//pega reatribui o produto do estoque 
+			produtoEstoque.setQuantidade(produtoEstoque.getQuantidade() + produtoCarrinho.getQuantidade());
+			
+			//remove do carrinho
+			this.remove(produtoCarrinho.getCodigo());
+
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 		
+		
+	}
+	/**
+	 * Localiza produto no carriho pelo codigo
+	 * @param codigo
+	 * @return
+	 */
+	public Produto localizar(int codigo){
+		try {
+			for (Produto p : carrinho) {
+				if (p.getCodigo() == codigo) {
+					return p;
+				}
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	/**
+	 * Localiza o produto no carrinho por produto
+	 * @param produto
+	 * @return
+	 */
+	public Produto localizar(Produto produto){
+		return localizar(produto.getCodigo());
 	}
 
 	// #endregion

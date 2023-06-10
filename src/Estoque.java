@@ -52,11 +52,11 @@ public class Estoque {
 	 * @param codigo
 	 * @return
 	*/
-	public Produto localizarProduto(int codigo){
+	public Produto localizar(int codigo){
 		try {
 			for (Produto p : estoque) {
-			if (p.getCodigo() == codigo) {
-				return p;
+				if (p.getCodigo() == codigo) {
+					return p;
 				}
 			}
 			return null;
