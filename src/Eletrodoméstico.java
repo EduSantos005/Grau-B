@@ -1,5 +1,3 @@
-
-
 public class Eletrodoméstico extends Produto {
 
 	private String descricao;

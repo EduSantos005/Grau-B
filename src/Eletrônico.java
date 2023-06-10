@@ -1,5 +1,3 @@
-
-
 public class Eletrônico extends Produto {
 	
 	private String descricao;

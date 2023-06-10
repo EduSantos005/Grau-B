@@ -3,59 +3,103 @@ import java.util.ArrayList;
 public class Carrinho {
 
 	private ArrayList<Produto> carrinho;
-	private double valor = 0;
+	private Estoque estoque;
 
-	public Carrinho(ArrayList<Produto> carrinho) {
-		this.carrinho = carrinho;
-	}
+	// #region funcoes
 
-	/*public void adicionarProduto(Produto produto) {
-		carrinho.add(produto);
-		valor += produto.getValor();
-		produto.setQuantidade(produto.getQuantidade() - 1);
-	}
-	*/
-	
-	public void removerProduto(Produto produto) {
-			if (carrinho.contains(produto)) {
-				carrinho.remove(produto);
-				valor -= produto.getValor();
-				System.out.println("Produto: " + produto.getNome() + " removido do Carrinho.");
-				produto.setQuantidade(produto.getQuantidade()+1);
-				
-			} else {
-				System.out.println("Produto: "  + produto.getNome() + " não encontra-se no carrinho.");
+	/**
+	 * Adiciona o produto no carrinho
+	 * @param produto produto a ser retirado no estoque
+	 * @param quantidade quantidade a ser tirada no estoque
+	 * @return
+	 */
+	private boolean adicionar(Produto produto, int quantidade) {
+		try {
+			// verifica se existe o produto no estoque
+			if (null == estoque.localizar(produto.getCodigo())) {
+				throw new Exception("Produto nao esta localiado no estoque");
 			}
-		}
-	
 
-	public void adicionarProduto(Produto produto) {
-		if (1 <= produto.getQuantidade()) {
+			// verificando se o produto possui a quantidade desejada a ser retirada
+			if (0 > produto.getQuantidade() - quantidade) {
+				throw new Exception("Valor de quantidade invalida");
+			}
+			// adicionar no carrinho
+			produto.setQuantidade(produto.getQuantidade() - quantidade);
 			carrinho.add(produto);
-			valor += produto.getValor();
-			System.out.println("Produto: " + produto.getNome() + " adicionado ao Carrinho.");
 
-			produto.setQuantidade(produto.getQuantidade() - 1);
-		} else {
-			System.out.println("Quantidade não disponível, favor selecionar quantidade válida.");
+			// atualiando o estoque
+			if (produto.getQuantidade() == 0) {
+				estoque.excluir(produto.getCodigo());
+			} else {
+				estoque.update(produto);
+			}
+
+			return true;
+
+		} catch (Exception e) {
+			System.err.println(e);
+			return false;
+		}		
+	}
+
+	/**
+	 * Remove produto do carrinho
+	 * @param codigo
+	 * @return
+	 */
+	public boolean remove(int codigo){
+		try {
+			//localiza o mesmo produto tanto no carrinho como no estoque
+			Produto produtoCarrinho = localizar(codigo);
+			Produto produtoEstoque = estoque.localizar(codigo);
+
+			//verifica se ha produto no carrinho
+			if (produtoCarrinho == null) {
+				throw new Exception("Produto nao localizado no carrinho");
+			}
+
+			//verifica se ha produto no Estoque
+			if (produtoEstoque == null) {
+				throw new Exception("Produto nao localizado no carrinho");
+			}
+			//pega reatribui o produto do estoque 
+			produtoEstoque.setQuantidade(produtoEstoque.getQuantidade() + produtoCarrinho.getQuantidade());
+			
+			//remove do carrinho
+			this.remove(produtoCarrinho.getCodigo());
+
+			return true;
+		} catch (Exception e) {
+			return false;
 		}
 	}
+	/**
+	 * Localiza produto no carriho pelo codigo
+	 * @param codigo
+	 * @return
+	 */
+	public Produto localizar(int codigo){
+		try {
+			for (Produto p : carrinho) {
+				if (p.getCodigo() == codigo) {
+					return p;
+				}
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	/**
+	 * Localiza o produto no carrinho por produto
+	 * @param produto
+	 * @return
+	 */
+	public Produto localizar(Produto produto){
+		return localizar(produto.getCodigo());
+	}
 
-	public void listarCarrinho() {
-		System.out.println("Produtos selecionados:");
-
- for (Produto produto : carrinho) {
-	if (produto instanceof Produto) {
-		Produto product = (Produto) produto;
-		product.infProduto();
-	}
-}		
- System.out.println("Valor Total: R$ " + String.format("%.2f", valor));
-	}
-	
-	@Override
-	public String toString() {
-		return "Itens Selecionados:" + carrinho + "\nValor Total: R$ " + String.format("%.2f", valor);
-	}
+	// #endregion
 
 }

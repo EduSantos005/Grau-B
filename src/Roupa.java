@@ -1,5 +1,3 @@
-
-
 public class Roupa extends Produto {
 
 	private String tipo;

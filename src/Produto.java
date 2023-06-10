@@ -1,5 +1,3 @@
-
-
 public abstract class Produto {
 
 	private String nome;
@@ -48,10 +46,16 @@ public abstract class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	public void infProduto() {
-		System.out.println("Produto: " + nome + " - Valor: R$ " + String.format("%.2f", valor));
+
+	/**
+	 * funcao informa o nome e o valor unitario do produto
+	 * @return retorna o nome e o valor
+	 */
+
+	public String infProduto() {
+		return "Produto: " + nome + " - Valor: R$ " + String.format("%.2f", valor);
 	}
+	
 
 	@Override
 	public String toString() {
