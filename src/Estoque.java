@@ -8,8 +8,9 @@ public class Estoque {
 
 	/**
 	 * funcao que adiciona produto no estoque
+	 * 
 	 * @param produto
-	 * @return  
+	 * @return
 	 */
 	public boolean adicionar(Produto produto) {
 		try {
@@ -20,8 +21,10 @@ public class Estoque {
 			return false;
 		}
 	}
+
 	/**
 	 * Fncao que visa excluir um produto no estoque;
+	 * 
 	 * @param codigo
 	 * @return
 	 */
@@ -33,12 +36,14 @@ public class Estoque {
 			return false;
 		}
 	}
+
 	/**
 	 * Funcao que visa realizar o update de um produto;
+	 * 
 	 * @param produto
 	 * @return
 	 */
-	public boolean update(Produto produto){
+	public boolean update(Produto produto) {
 		try {
 			excluir(codigo);
 			adicionar(produto);
@@ -47,12 +52,14 @@ public class Estoque {
 			return false;
 		}
 	}
+
 	/**
 	 * Funcao que retorna produto com o codigo informado;
+	 * 
 	 * @param codigo
 	 * @return
-	*/
-	public Produto localizar(int codigo){
+	 */
+	public Produto localizar(int codigo) {
 		try {
 			for (Produto p : estoque) {
 				if (p.getCodigo() == codigo) {
@@ -70,10 +77,9 @@ public class Estoque {
 		return "Estoque [estoque=" + estoque + ", codigo=" + codigo + "]";
 	}
 	// #endregion
-	
 
-	//#region constructor
-	
+	// #region constructor
+
 	public Estoque(ArrayList<Produto> estoque) {
 		this.estoque = estoque;
 	}
@@ -81,5 +87,5 @@ public class Estoque {
 	public Estoque() {
 		estoque = new ArrayList<Produto>();
 	}
-	//#endregion
+	// #endregion
 }

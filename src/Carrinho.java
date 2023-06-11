@@ -40,7 +40,8 @@ public class Carrinho {
 		} catch (Exception e) {
 			System.err.println(e);
 			return false;
-		}		
+		}	
+		
 	}
 
 	/**
