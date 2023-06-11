@@ -1,0 +1,96 @@
+[33mcommit 777f84be42af9c3254070bf99eec4f0cfb9dd5c5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Arthur Kellermann <arthur.kellermann956@gmail.com>
+Date:   Sun Jun 11 15:55:27 2023 -0300
+
+    Criado menu, classe Ciente, e impressao da notinha
+
+[33mcommit c014eed9fa5ef340d1022bd8a2380ea4201de2c8[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: 2210932 6d3db32
+Author: Ulisses953 <ulisseskranzdamotta@gmail.com>
+Date:   Sat Jun 10 10:49:07 2023 -0300
+
+    Merge com MudancasCodigo
+
+[33mcommit 6d3db324d7bd1e4b0d11ae6eab41eb31ca1a789f[m[33m ([m[1;31morigin/MudancasCodigo[m[33m)[m
+Author: Ulisses953 <ulisseskranzdamotta@gmail.com>
+Date:   Sat Jun 10 10:20:25 2023 -0300
+
+    desenvolvimento do do crud de carrinho
+
+[33mcommit 6e9b2475837ea4ce05873cca5ce2ebdb2b81691a[m
+Author: Ulisses953 <ulisseskranzdamotta@gmail.com>
+Date:   Fri Jun 9 20:50:22 2023 -0300
+
+    termino do estoque e inicio do carrinho
+
+[33mcommit 6b384ef7be20a707efc667d0b85d62d28fe75e52[m
+Author: Ulisses953 <ulisseskranzdamotta@gmail.com>
+Date:   Thu Jun 8 17:03:07 2023 -0300
+
+    inicio da docmentacao e mudancas do codigo
+
+[33mcommit d042020ff120d00065b356609a4618521f9e0e19[m
+Author: Ulisses953 <ulisseskranzdamotta@gmail.com>
+Date:   Thu Jun 8 17:00:30 2023 -0300
+
+    mudancas no projeto drasticas
+
+[33mcommit 22109323cb61fb6335d6b2e2ac4dbd1f9a504af8[m
+Author: Eduardo dos Santos <EduardoSantos10@edu.unisinos.br>
+Date:   Wed Jun 7 20:56:06 2023 -0300
+
+    Mais algumas alterações
+
+[33mcommit 0888e9b7883410a6c11d081a23c8c95f70afb056[m
+Author: Eduardo dos Santos <EduardoSantos10@edu.unisinos.br>
+Date:   Wed Jun 7 19:38:20 2023 -0300
+
+    Formatei os valores pra estarem com 2 casas decimais
+
+[33mcommit 7eea8923f9e6a9e1a67f8b75c6b78b89a8594a4f[m
+Author: Eduardo dos Santos <EduardoSantos10@edu.unisinos.br>
+Date:   Wed Jun 7 19:31:25 2023 -0300
+
+    Mudei o main
+
+[33mcommit fb6ea6caf9f6f398d7a3f15d8d930959dd0c785b[m
+Author: Ulisses <97630716+ulisses953@users.noreply.github.com>
+Date:   Thu Jun 1 18:04:38 2023 -0300
+
+    Delete .classpath
+
+[33mcommit a4aaaeacf25be71842df7a00d51bf5b04a05942b[m
+Author: Ulisses <97630716+ulisses953@users.noreply.github.com>
+Date:   Thu Jun 1 17:27:11 2023 -0300
+
+    Delete .project
+
+[33mcommit b066dd6d0188adccd52efe8a9e5083ffe9fcc0f9[m
+Author: Ulisses <97630716+ulisses953@users.noreply.github.com>
+Date:   Thu Jun 1 17:26:44 2023 -0300
+
+    Delete .settings directory
+
+[33mcommit d5a108021e27607d108424429297073a95298573[m
+Author: Ulisses953 <ulisseskranzdamotta@gmail.com>
+Date:   Thu Jun 1 17:19:40 2023 -0300
+
+    mudancas no diretorio
+
+[33mcommit e66d9ebcef7c826aed32f7401667b7ee269ba151[m
+Author: Eduardo dos Santos <EduardoSantos10@edu.unisinos.br>
+Date:   Wed May 31 21:48:16 2023 -0300
+
+    Atualização do programa (só falta o menu)
+
+[33mcommit 130d8edb5b414cd1fead1e26a91a2c3915986e61[m
+Author: Eduardo dos Santos <EduardoSantos10@edu.unisinos.br>
+Date:   Wed May 31 21:17:39 2023 -0300
+
+    inicio do projeto
+
+[33mcommit ab9d236508cd1712cf11f4693106116628c8b73e[m
+Author: Edu <120612283+EduSantos005@users.noreply.github.com>
+Date:   Wed May 31 21:13:38 2023 -0300
+
+    Initial commit
