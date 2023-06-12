@@ -1,5 +1,3 @@
-
-
 public class Livro extends Produto {
 
 	public String autor;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Carrinho {
 
 	private ArrayList<Produto> carrinho;
-	private double valor = 0;
+	private Estoque estoque;
 
 	public Carrinho(ArrayList<Produto> carrinho) {
 		this.carrinho = carrinho;
@@ -29,8 +29,6 @@ public class Carrinho {
 		}	
 	}
 
-
-
 	public boolean adicionarProduto(Produto produto) {
 		try {
 			if (1 <= produto.getQuantidade()) {
@@ -48,7 +46,6 @@ public class Carrinho {
 			System.err.println(e);
 			return false;
 		}	
-	}
 
 	public ArrayList <Produto> listarCarrinho() {
 		System.out.println("\nProdutos selecionados:");
@@ -66,5 +63,7 @@ public class Carrinho {
 	public String toString() {
 		return "Itens Selecionados:" + carrinho + "\nValor Total: R$ " + String.format("%.2f", valor);
 	}
+
+
 
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 public class Cliente {
 
 	private String nome;
@@ -7,6 +8,18 @@ public class Cliente {
 	public Cliente() {}
 
 
+=======
+
+public class Cliente {
+	
+	private String nome;
+	private String cpf;
+	private String email;
+	
+	public Cliente() {}
+	
+	
+>>>>>>> 3350e44bc42eef6e83a191a5ee133d8fed85eaea
 	public Cliente(String nome, String cpf, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -38,8 +51,4 @@ public class Cliente {
 	public String toString() {
 		return "Nome=" + nome + ", CPF=" + cpf + ", Email=" + email;
 	}
-
-
-
-
 }
