@@ -1,10 +1,56 @@
-
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Main {
 
+	public static void notinha(int cpfNaNota, String cpf) {
+		
+
+		String dirPath = "./Notinha";
+		File diretorio = new File(dirPath);
+
+		if (diretorio.mkdirs()) {
+			System.out.println("Pasta da notinha criada em: " + diretorio.getAbsolutePath());
+		}
+
+		String path = diretorio.getAbsolutePath() + "\\notinha.txt";
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+
+			System.out.println("Notinha impressa com sucesso!");
+
+			if (cpfNaNota == 1) {
+				bw.write("Cliente de CPF: " + cpf);
+				bw.write(" | Produtos comprados: "); // precisa colocar os produtos do carrinho
+			}else {
+				bw.write("Produtos comprados: "); 
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	public static void main(String[] args) {
 
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("--CADASTRO--");
+		System.out.print("Digite seu nome: ");
+		String nome = in.nextLine();
+		System.out.print("Digite seu CPF: ");
+		String cpf = in.nextLine();
+		System.out.print("Digite seu email: ");
+		String email = in.nextLine();
+
+		Cliente cliente = new Cliente(nome, cpf, email);
+
+		
 		Produto camisaG = new Roupa("Camisa", 60, 101, 4, "Tecido", "G", "Preta");
 		Produto camisaM = new Roupa("Camisa", 60, 102, 16, "Tecido", "M", "Preta");
 		Produto camisaP = new Roupa("Camisa", 60, 103, 10, "Tecido", "P", "Preta");
@@ -33,16 +79,23 @@ public class Main {
 		empresa.adicionarProduto(fogao);
 		empresa.adicionarProduto(geladeira);
 
+		System.out.println("Bem vindo a Loja Grau B, segue abaixo os produtos disponíveis em nosso estoque: ");
+
 		System.out.println(empresa);
-		
+
 		Carrinho usuario = new Carrinho(new ArrayList());
 		
-/*
+		System.out.println("CARRINHO DO " + cliente.getNome());
+		
+		System.out.println("Digite os números de acordo com o produto que você quer adicionar");
+		
 		usuario.adicionarProduto(freezer);
+		usuario.adicionarProduto(pp);
+		usuario.adicionarProduto(pp);
 		usuario.adicionarProduto(pp);
 		usuario.removerProduto(iphone);
 		usuario.removerProduto(freezer);
 
-		usuario.listarCarrinho(); */
+		usuario.listarCarrinho(); 
 	}
 }
