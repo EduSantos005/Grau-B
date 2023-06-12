@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-<<<<<<< HEAD
+
 
 
 public class Main {
@@ -38,12 +38,6 @@ public class Main {
 
 	}
 	public static void main(String[] args) {
-=======
-
-public class Main {
-
-	public static Estoque estoque() {
->>>>>>> 3350e44bc42eef6e83a191a5ee133d8fed85eaea
 
 		Scanner in = new Scanner(System.in);
 		
@@ -86,7 +80,6 @@ public class Main {
 		estoqueDaEmpresa.adicionar(fogao);
 		estoqueDaEmpresa.adicionar(geladeira);
 
-<<<<<<< HEAD
 		System.out.println("Bem vindo a Loja Grau B, segue abaixo os produtos disponíveis em nosso estoque: ");
 
 		System.out.println(empresa);
@@ -105,10 +98,7 @@ public class Main {
 		usuario.removerProduto(freezer);
 
 		usuario.listarCarrinho(); 
-=======
-		return estoqueDaEmpresa;
 
->>>>>>> 3350e44bc42eef6e83a191a5ee133d8fed85eaea
 	}
 
 	public static void notinha(int cpfNaNota, String cpf) {
@@ -165,25 +155,9 @@ public class Main {
 
 		int opcao = in.nextInt();
 
-		switch (opcao) {
+		
 
-		case 0:
-			System.out.println("Adeus" + cliente.getNome());
-			System.exit(0);
-		case 1:
-			System.out.println(estoqueDaEmpresa);
-			break;
-		case 2:
-			System.out.println("Digite o código do produto");
-			int codigo = in.nextInt();
-			if (estoqueDaEmpresa.localizar(codigo) == null) {
-				System.out.println("Produto não existe!");
-			} else {
-				System.out.println("Produto de código" + codigo + ": " + estoqueDaEmpresa.localizar(codigo));
-			}
-			break;
 
-		}
 		if (opcao == 1) {
 			System.out.println("CARRINHO DO " + cliente.getNome());
 			System.out.println("Digite os números de acordo com o produto que você quer adicionar");
