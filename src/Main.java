@@ -41,7 +41,7 @@ public class Main {
 
 	}
 
-	public static void notinha() {
+	public static void notinha(int cpfNaNota, String cpf) {
 		Carrinho carrinho = new Carrinho();
 
 		String dirPath = "./Notinha";
@@ -57,7 +57,12 @@ public class Main {
 
 			System.out.println("Notinha impressa com sucesso!");
 
-			bw.write("Produtos comprados: "); // precisa colocar os produtos do carrinho
+			if (cpfNaNota == 1) {
+				bw.write("Cliente de CPF: " + cpf);
+				bw.write(" | Produtos comprados: "); // precisa colocar os produtos do carrinho
+			}else {
+				bw.write("Produtos comprados: "); 
+			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -68,7 +73,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Estoque estoqueDaEmpresa = Main.estoque();
-		System.out.println(estoqueDaEmpresa);
+		//System.out.println(estoqueDaEmpresa);
 
 		Scanner in = new Scanner(System.in);
 
@@ -118,14 +123,15 @@ public class Main {
 
 		}
 
-		System.out.println("Imprimir notinha? (s/n)");
+		System.out.println("CPF na nota? (s/n)");
 		char cpfNaNota = in.next().charAt(0);
 
 		if (cpfNaNota == 's' || cpfNaNota == 'S') {
-			notinha();
+			notinha(1, cliente.getCpf());
 		} else {
-			System.out.println("Adeus" + cliente.getNome());
+			notinha(0, null);
 		}
-
+		
+		System.out.println("Obrigado pela confiança, " + cliente.getNome());
 	}
 }
