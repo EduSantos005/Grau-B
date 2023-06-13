@@ -3,6 +3,13 @@ import java.util.ArrayList;
 public class Estoque {
 
 	private ArrayList<Produto> estoque;
+	
+
+	public Estoque(ArrayList<Produto> estoque) {
+		this.estoque = new ArrayList<Produto>();
+	}
+	
+	
 
 	public boolean adicionarProduto(Produto produto) {
 		try {
@@ -27,9 +34,6 @@ public class Estoque {
 		return "Estoque:" + estoque;
 	}
 
-	public Estoque() {
-		estoque = new ArrayList<Produto>();
-	}
 
 
 }

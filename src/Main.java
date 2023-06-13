@@ -5,13 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
 public class Main {
 
 	public static void notinha(int cpfNaNota, String cpf) {
-		
-
 		String dirPath = "./Notinha";
 		File diretorio = new File(dirPath);
 
@@ -35,8 +31,8 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
+	
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
@@ -50,7 +46,6 @@ public class Main {
 		String email = in.nextLine();
 
 		Cliente cliente = new Cliente(nome, cpf, email);
-
 		
 		Produto camisaG = new Roupa("Camisa", 60, 101, 4, "Tecido", "G", "Preta");
 		Produto camisaM = new Roupa("Camisa", 60, 102, 16, "Tecido", "M", "Preta");
@@ -65,20 +60,20 @@ public class Main {
 		Produto geladeira = new Eletrodoméstico("Geladeira", 2800, 402, 8, "Electrolux");
 		Produto fogao = new Eletrodoméstico("Fogão", 2000, 403, 8, "Brastemp 4 bocas");
 
-		Estoque estoqueDaEmpresa = new Estoque(new ArrayList<Produto>());
+		Estoque empresa = new Estoque(new ArrayList());
 
-		estoqueDaEmpresa.adicionar(camisaG);
-		estoqueDaEmpresa.adicionar(camisaM);
-		estoqueDaEmpresa.adicionar(camisaP);
-		estoqueDaEmpresa.adicionar(crepusculo);
-		estoqueDaEmpresa.adicionar(pp);
-		estoqueDaEmpresa.adicionar(dk);
-		estoqueDaEmpresa.adicionar(PC);
-		estoqueDaEmpresa.adicionar(iphone);
-		estoqueDaEmpresa.adicionar(monitor);
-		estoqueDaEmpresa.adicionar(freezer);
-		estoqueDaEmpresa.adicionar(fogao);
-		estoqueDaEmpresa.adicionar(geladeira);
+		empresa.adicionarProduto(camisaG);
+		empresa.adicionarProduto(camisaM);
+		empresa.adicionarProduto(camisaP);
+		empresa.adicionarProduto(pp);
+		empresa.adicionarProduto(crepusculo);
+		empresa.adicionarProduto(dk);
+		empresa.adicionarProduto(PC);
+		empresa.adicionarProduto(iphone);
+		empresa.adicionarProduto(monitor);
+		empresa.adicionarProduto(freezer);
+		empresa.adicionarProduto(fogao);
+		empresa.adicionarProduto(geladeira);
 
 		System.out.println("Bem vindo a Loja Grau B, segue abaixo os produtos disponíveis em nosso estoque: ");
 
@@ -86,86 +81,61 @@ public class Main {
 
 		Carrinho usuario = new Carrinho(new ArrayList());
 		
-		System.out.println("CARRINHO DO " + cliente.getNome());
+		System.out.println(" ");
+		System.out.println("Carrinho do " + cliente.getNome());
 		
-		System.out.println("Digite os números de acordo com o produto que você quer adicionar");
-		
-		usuario.adicionarProduto(freezer);
-		usuario.adicionarProduto(pp);
-		usuario.adicionarProduto(pp);
-		usuario.adicionarProduto(pp);
-		usuario.removerProduto(iphone);
-		usuario.removerProduto(freezer);
+		int opcao = 1000;
+		do {
+			System.out.println("Digite o código do produto que você quer adicionar ou digite 0 para finalizar o carrinho!");
+			opcao = in.nextInt();
 
-		usuario.listarCarrinho(); 
-
-	}
-
-	public static void notinha(int cpfNaNota, String cpf) {
-		Carrinho carrinho = new Carrinho();
-
-		String dirPath = "./Notinha";
-		File diretorio = new File(dirPath);
-
-		if (diretorio.mkdirs()) {
-			System.out.println("Pasta da notinha criada em: " + diretorio.getAbsolutePath());
-		}
-
-		String path = diretorio.getAbsolutePath() + "\\notinha.txt";
-
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-
-			System.out.println("Notinha impressa com sucesso!");
-
-			if (cpfNaNota == 1) {
-				bw.write("Cliente de CPF: " + cpf);
-				bw.write(" | Produtos comprados: "); // precisa colocar os produtos do carrinho
-			}else {
-				bw.write("Produtos comprados: "); 
+			switch (opcao) {
+			case 101: 
+				usuario.adicionarProduto(camisaG);
+				break;
+			case 102: 
+				usuario.adicionarProduto(camisaM);
+				break;
+			case 103: 
+				usuario.adicionarProduto(camisaP);
+				break;
+			case 201: 
+				usuario.adicionarProduto(pp);
+				break;
+			case 202: 
+				usuario.adicionarProduto(crepusculo);
+				break;
+			case 203: 
+				usuario.adicionarProduto(dk);
+				break;
+			case 301: 
+				usuario.adicionarProduto(PC);
+				break;
+			case 302: 
+				usuario.adicionarProduto(iphone);
+				break;
+			case 303: 
+				usuario.adicionarProduto(monitor);
+				break;
+			case 401: 
+				usuario.adicionarProduto(freezer);
+				break;
+			case 402: 
+				usuario.adicionarProduto(fogao);
+				break;
+			case 403: 
+				usuario.adicionarProduto(geladeira);
+				break;
+			case 0:
+				System.out.println("Carrinho finalizado!");
+				break;
+			default: 
+				System.out.println("Código Inválido!");
+				break;
 			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public static void main(String[] args) {
-
-		Estoque estoqueDaEmpresa = Main.estoque();
-		//System.out.println(estoqueDaEmpresa);
-
-		Scanner in = new Scanner(System.in);
-
-		System.out.println();
-		System.out.println("--CADASTRO--");
-		System.out.print("Digite seu nome: ");
-		String nome = in.nextLine();
-		System.out.print("Digite seu CPF: ");
-		String cpf = in.nextLine();
-		System.out.print("Digite seu email: ");
-		String email = in.nextLine();
-
-		Cliente cliente = new Cliente(nome, cpf, email);
-
-		System.out.println();
-		System.out.println("Você entrou no sistema!");
-		System.out.println("Selecione uma opção");
-		System.out.println("1. Ver produtos disponíveis\n" + "2. Localizar um produto\n" + "0. Sair");
-
-		int opcao = in.nextInt();
-
+		} while (opcao != 0);
 		
-
-
-		if (opcao == 1) {
-			System.out.println("CARRINHO DO " + cliente.getNome());
-			System.out.println("Digite os números de acordo com o produto que você quer adicionar");
-
-			Carrinho carrinho = new Carrinho();
-			// tem que fazer o sistema de adicionar no carrinho
-
-		}
+		usuario.listarCarrinho(); 
 
 		System.out.println("CPF na nota? (s/n)");
 		char cpfNaNota = in.next().charAt(0);

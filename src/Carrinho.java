@@ -5,7 +5,8 @@ public class Carrinho {
 
 	private ArrayList<Produto> carrinho;
 	private Estoque estoque;
-
+	private double valor;
+	
 	public Carrinho(ArrayList<Produto> carrinho) {
 		this.carrinho = carrinho;
 	}
@@ -45,7 +46,8 @@ public class Carrinho {
 		}  catch (Exception e) {
 			System.err.println(e);
 			return false;
-		}	
+		}
+	}
 
 	public ArrayList <Produto> listarCarrinho() {
 		System.out.println("\nProdutos selecionados:");
