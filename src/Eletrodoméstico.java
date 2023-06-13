@@ -1,16 +1,16 @@
 public class Eletrodoméstico extends Produto {
 
 	private String descricao;
-	
+
 	public Eletrodoméstico(String nome, double valor, int codigo, int quantidade, String descricao) {
 		super(nome, valor, codigo, quantidade);
 		this.descricao = descricao;
 	}
-	
+
 	public Eletrodoméstico() {
 		super();
 	}
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -21,7 +21,7 @@ public class Eletrodoméstico extends Produto {
 
 	@Override
 	public String toString() {
-		return "\nEletrodoméstico: "+ super.toString() + " - Descrição= " + descricao;
+		return "\nEletrodoméstico: " + super.toString() + " - Descrição= " + descricao;
 	}
-	
+
 }

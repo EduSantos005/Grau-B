@@ -4,14 +4,14 @@ public abstract class Produto {
 	private double valor;
 	public int codigo;
 	public int quantidade;
-	
+
 	public Produto(String nome, double valor, int codigo, int quantidade) {
 		this.nome = nome;
 		this.valor = valor;
 		this.codigo = codigo;
 		this.quantidade = quantidade;
 	}
-	
+
 	public Produto() {
 	}
 
@@ -49,18 +49,18 @@ public abstract class Produto {
 
 	/**
 	 * funcao informa o nome e o valor unitario do produto
+	 * 
 	 * @return retorna o nome e o valor
 	 */
-	
+
 	public String infProduto() {
 		return "Produto: " + nome + " - Valor: R$ " + String.format("%.2f", valor);
 	}
-	
 
 	@Override
 	public String toString() {
-		return codigo + " - Nome= " + nome + " - Valor= R$ " + String.format("%.2f", valor) + " - Quantidade= " + quantidade;
+		return codigo + " - Nome= " + nome + " - Valor= R$ " + String.format("%.2f", valor) + " - Quantidade= "
+				+ quantidade;
 	}
 
-	
 }
