@@ -34,6 +34,8 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
+		
+		
 
 		Scanner in = new Scanner(System.in);
 		
@@ -47,9 +49,9 @@ public class Main {
 
 		Cliente cliente = new Cliente(nome, cpf, email);
 		
-		Produto camisaG = new Roupa("Camisa", 60, 101, 4, "Tecido", "G", "Preta");
-		Produto camisaM = new Roupa("Camisa", 60, 102, 16, "Tecido", "M", "Preta");
-		Produto camisaP = new Roupa("Camisa", 60, 103, 10, "Tecido", "P", "Preta");
+		Produto camisaG = new Roupa("Camisa G", 60, 101, 4, "Tecido", "G", "Preta");
+		Produto camisaM = new Roupa("Camisa M", 60, 102, 16, "Tecido", "M", "Preta");
+		Produto camisaP = new Roupa("Camisa P", 60, 103, 10, "Tecido", "P", "Preta");
 		Produto pp = new Livro("Pequeno Príncipe", 40, 201, 2, "Antoine de Saint-Exupéry", "Ficção");
 		Produto crepusculo = new Livro("Crepúsculo", 50, 202, 5, "Stephenie Meyer", "Romance");
 		Produto dk = new Livro("Dom Quixote", 30, 203, 3, "Miguel de Cervantes", "Aventura");
@@ -79,7 +81,7 @@ public class Main {
 
 		System.out.println(empresa);
 
-		Carrinho usuario = new Carrinho(new ArrayList());
+		Carrinho usuario = new Carrinho(new ArrayList<>());
 		
 		System.out.println(" ");
 		System.out.println("Carrinho do " + cliente.getNome());
@@ -135,7 +137,14 @@ public class Main {
 			}
 		} while (opcao != 0);
 		
-		usuario.listarCarrinho(); 
+		System.out.println("\nProdutos selecionados:");
+		for (Produto produto : usuario.getCarrinho()) {
+			if (produto instanceof Produto) {
+				Produto product = (Produto) produto;
+				 System.out.println(product.infProduto());
+			}
+		}
+		System.out.println("Valor Total: R$ " + String.format("%.2f", usuario.getValor()));
 
 		System.out.println("CPF na nota? (s/n)");
 		char cpfNaNota = in.next().charAt(0);

@@ -51,7 +51,7 @@ public abstract class Produto {
 	 * funcao informa o nome e o valor unitario do produto
 	 * @return retorna o nome e o valor
 	 */
-
+	
 	public String infProduto() {
 		return "Produto: " + nome + " - Valor: R$ " + String.format("%.2f", valor);
 	}
