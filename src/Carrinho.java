@@ -2,10 +2,12 @@ import java.util.ArrayList;
 
 public class Carrinho {
 
-	private ArrayList<Produto> carrinho;
-	private Estoque estoque;
+	private ArrayList<Produto> carrinho = new ArrayList<Produto>();
+	private Estoque estoque ;
 	private double valor;
-
+	public Carrinho() {
+		
+	}
 	public Carrinho(ArrayList<Produto> carrinho) {
 		this.carrinho = carrinho;
 	}
