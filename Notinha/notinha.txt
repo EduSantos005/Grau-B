@@ -1,4 +1,0 @@
-Produtos comprados: 
-Produto: Camisa G - Valor: R$ 60,00
-Produto: Crepúsculo - Valor: R$ 50,00
-Valor total: R$ 110,00

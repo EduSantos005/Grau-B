@@ -7,47 +7,56 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void notinha(int cpfNaNota, String cpf, Carrinho carrinho) {
-		String dirPath = "./Notinha";
-		File diretorio = new File(dirPath);
+	public static boolean notinha(int cpfNaNota, String cpf, Carrinho carrinho) {
+		try {
 
-		if (diretorio.mkdirs()) {
-			System.out.println("Pasta da notinha criada em: " + diretorio.getAbsolutePath());
-		}
+			String dirPath = "./Notinha";
+			File diretorio = new File(dirPath);
 
-		String path = diretorio.getAbsolutePath() + "\\notinha.txt";
-
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-
-			System.out.println("Notinha impressa com sucesso!");
-
-			if (cpfNaNota == 1) {
-				bw.write("Cliente de CPF: " + cpf);
-				bw.write(" | Produtos comprados: " + "\n");
-
-				for (Produto produto : carrinho.getCarrinho()) {
-					if (produto instanceof Produto) {
-						Produto product = (Produto) produto;
-						bw.write(product.infProduto() + "\n");
-					}
-
-				}
-
-				bw.write("Valor total: R$ " + String.format("%.2f", carrinho.getValor()));
-			} else {
-				bw.write("Produtos comprados: " + "\n");
-				for (Produto produto : carrinho.getCarrinho()) {
-					if (produto instanceof Produto) {
-						Produto product = (Produto) produto;
-						bw.write(product.infProduto() + "\n");
-					}
-
-				}
-				bw.write("Valor total: R$ " + String.format("%.2f", carrinho.getValor()));
+			if (diretorio.mkdirs()) {
+				System.out.println("Pasta da notinha criada em: " + diretorio.getAbsolutePath());
 			}
 
-		} catch (IOException e) {
-			e.printStackTrace();
+			String path = diretorio.getAbsolutePath() + "\\notinha.txt";
+
+			try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+
+				System.out.println("Notinha impressa com sucesso!");
+
+				if (cpfNaNota == 1) {
+					bw.write("Cliente de CPF: " + cpf);
+					bw.write(" | Produtos comprados: " + "\n");
+
+					for (Produto produto : carrinho.getCarrinho()) {
+						if (produto instanceof Produto) {
+							Produto product = (Produto) produto;
+							bw.write(product.infProduto() + "\n");
+						}
+
+					}
+
+					bw.write("Valor total: R$ " + String.format("%.2f", carrinho.getValor()));
+
+				} else {
+					bw.write("Produtos comprados: " + "\n");
+					for (Produto produto : carrinho.getCarrinho()) {
+						if (produto instanceof Produto) {
+							Produto product = (Produto) produto;
+							bw.write(product.infProduto() + "\n");
+						}
+
+					}
+					bw.write("Valor total: R$ " + String.format("%.2f", carrinho.getValor()));
+				}
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return true;
+
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
 		}
 	}
 

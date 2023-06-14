@@ -10,8 +10,7 @@ public class Estoque {
 
 	public boolean adicionarProduto(Produto produto) {
 		try {
-			estoque.add(produto);
-			return true;
+			return estoque.add(produto);
 		} catch (Exception e) {
 			return false;
 		}
