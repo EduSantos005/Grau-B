@@ -4,6 +4,16 @@ public class Roupa extends Produto {
 	private String tamanho;
 	private String cor;
 	
+	/**
+	 * Além dos parametros padrões, ele vai ter os atributos tipo, tamanho e cor.
+	 * @param nome
+	 * @param valor
+	 * @param codigo
+	 * @param quantidade
+	 * @param tipo Se refere ao tipo da roupa.
+	 * @param tamanho Se refere ao tamanho da roupa.
+	 * @param cor Se refere a cor da roupa.
+	 */
 	public Roupa(String nome, double valor, int codigo, int quantidade, String tipo, String tamanho, String cor) {
 		super(nome, valor, codigo, quantidade);
 		this.tipo = tipo;

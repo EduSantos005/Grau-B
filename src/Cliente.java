@@ -7,6 +7,12 @@ public class Cliente {
 	public Cliente() {
 	}
 
+	/**
+	 * Dados importantes para se a ligação entre o usuário e a loja.
+	 * @param nome Nome do cliente.
+	 * @param cpf CPF do cliente.
+	 * @param email Email do cliente.
+	 */
 	public Cliente(String nome, String cpf, String email) {
 		this.nome = nome;
 		this.cpf = cpf;

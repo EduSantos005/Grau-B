@@ -20,7 +20,7 @@ class EstoqueTest {
 		
 		
 		Estoque est = new Estoque();
-		Livro liv = new Livro("Crepúsculo", 30.00d, 201, 9, "Stephanie Meyer", 99);
+		Livro liv = new Livro("Crepúsculo", 30.00d, 201, 0, "Stephanie Meyer", "Romance");
 		
 		assertFalse(est.adicionarProduto(liv));
 	}

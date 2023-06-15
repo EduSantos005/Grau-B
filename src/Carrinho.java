@@ -8,14 +8,20 @@ public class Carrinho {
 	public Carrinho() {
 		
 	}
+	
+	/**
+	 * O construtor é composto de um ArrayList de produtos.
+	 * @param carrinho É o nome dado ao ArrayList de produtos.
+	 */
 	public Carrinho(ArrayList<Produto> carrinho) {
 		this.carrinho = carrinho;
 	}
-
-	public void setCarrinho(ArrayList<Produto> carrinho) {
-		this.carrinho = carrinho;
-	}
-
+	
+	/**
+	 * É um método na qual remove um produto do carrinho.
+	 * @param produto Ele confere se o produto está presente no carrinho, caso sim, remove o mesmo além de diminuir o valor do carrinho, ainda coloca a quantidade no estoque como +1.
+	 * @return
+	 */
 	public boolean removerProduto(Produto produto) {
 		try {
 			if (carrinho.contains(produto)) {
@@ -35,6 +41,11 @@ public class Carrinho {
 		}
 	}
 
+	/**
+	 * É um método na qual adiciona um produto ao carrinho.
+	 * @param produto Confere se tem quantidade suficiente desse produto no estoque, adiciona ao carrinho, soma o valor ao valor do carrinho, além de diminuir em 1 a quantidade no estoque
+	 * @return
+	 */
 	public boolean adicionarProduto(Produto produto) {
 		try {
 			if (1 <= produto.getQuantidade()) {
@@ -66,6 +77,10 @@ public class Carrinho {
 		return carrinho;
 	}
 
+	public void setCarrinho(ArrayList<Produto> carrinho) {
+		this.carrinho = carrinho;
+	}
+	
 	public Estoque getEstoque() {
 		return estoque;
 	}

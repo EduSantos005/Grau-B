@@ -6,6 +6,16 @@ public class Livro extends Produto {
 	public Livro() {
 		super();
 	}
+	
+	/**
+	 * Além dos parametros padrões, ele vai ter os atributos autor e genero.
+	 * @param nome
+	 * @param valor
+	 * @param codigo
+	 * @param quantidade
+	 * @param autor Se refere ao autor do livro.
+	 * @param genero Se refere ao gênero do livro.
+	 */
 	public Livro(String nome, double valor, int codigo, int quantidade, String autor, String genero) {
 		super(nome, valor, codigo, quantidade);
 		this.autor = autor;

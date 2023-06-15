@@ -5,6 +5,14 @@ public abstract class Produto {
 	public int codigo;
 	public int quantidade;
 
+	/**
+	 * Produto é qualquer produto presente na loja.
+	 * @param nome É o nome de determinado produto.
+	 * @param valor O valor de determinado produto.
+	 * @param codigo Cada produto terá seu código específico.
+	 * @param quantidade Se refere a quantidade desse produto presente no estoque da empresa.
+	 */
+	
 	public Produto(String nome, double valor, int codigo, int quantidade) {
 		this.nome = nome;
 		this.valor = valor;
@@ -48,11 +56,9 @@ public abstract class Produto {
 	}
 
 	/**
-	 * funcao informa o nome e o valor unitario do produto
 	 * 
-	 * @return retorna o nome e o valor
+	 * @return Vai passar as informações do produto de maneira mais simplificada. Ideal para colocar na confirmação do carrinho.
 	 */
-
 	public String infProduto() {
 		return "Produto: " + nome + " - Valor: R$ " + String.format("%.2f", valor);
 	}
