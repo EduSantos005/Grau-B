@@ -16,8 +16,11 @@ class EstoqueTest {
 		assertTrue(est.adicionarProduto(liv));
 	}
 	@Test
+	/**
+	 * Teste que adiciona produto ao estoque e confirma retorno false ao não adicionar
+	 */
 	void testAdiciona2() {
-		
+	
 		
 		Estoque est = new Estoque();
 		Livro liv = new Livro("Crepúsculo", 30.00d, 201, 0, "Stephanie Meyer", "Romance");
