@@ -5,5 +5,5 @@ O Main possui um sistema de menu de compras com cadastro local e seleção de pr
 
 Código comentado com Javadoc.
 Todas as classes tem cobertura de testes unitários Junit (mínimo dois testes por métodos).
-Segue em anexo no repsitório o diagrama UML das classes do projeto.
+Segue em anexo no repositório o diagrama UML das classes do projeto.
 
