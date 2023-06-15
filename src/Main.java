@@ -7,6 +7,13 @@ import java.util.Scanner;
 
 public class Main {
 
+	/**
+	 * Função para imprimir nota(arquivo txt) na pasta local do projeto
+	 * @param cpfNaNota 1 = sim, 0 = não
+	 * @param cpf recebe o cpf do cliente
+	 * @param carrinho recebe o carrinho com a ArrayList de produtos
+	 * @return true para certo e false para errado
+	 */
 	public static boolean notinha(int cpfNaNota, String cpf, Carrinho carrinho) {
 		try {
 
