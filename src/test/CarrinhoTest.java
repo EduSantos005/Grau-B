@@ -1,4 +1,8 @@
-import static org.junit.jupiter.api.Assertions.*;
+package test;
+import grauB.*;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 
@@ -11,9 +15,7 @@ class CarrinhoTest {
 	 * Teste que adiciona produto ao carrinho e confirma retorno false ao não adicionar
 	 */
 	@Test
-	void testAdiciona() {
-
-
+	void testAdiciona(){
 		Estoque est = new Estoque();
 		Livro liv = new Livro("Crepúsculo", 30.00d, 201, 1, "Stephanie Meyer", "Romance");
 		est.adicionarProduto(liv);
@@ -29,7 +31,6 @@ class CarrinhoTest {
 	 */
 	@Test
 	void testRemove() {
-
 
 		Estoque est = new Estoque();
 		Livro liv = new Livro("Crepúsculo", 30.00d, 201, 1, "Stephanie Meyer", "Romance");

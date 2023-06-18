@@ -1,9 +1,12 @@
+package grauB;
+
 public class Cliente {
 
 	private String nome;
 	private String cpf;
 	private String email;
 
+	//#region
 	public Cliente() {
 	}
 
@@ -18,6 +21,10 @@ public class Cliente {
 		this.cpf = cpf;
 		this.email = email;
 	}
+
+	//#endregion
+
+	//#region get e set
 
 	public String getNome() {
 		return nome;
@@ -39,12 +46,32 @@ public class Cliente {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	/**
+	 * Funcao que visa realizar verificacoes do email do usuario
+	 * @param email 
+	 * @return
+	 */
+	public boolean setEmail(String email) {
+		try {
+			if (!email.contains("@")) {
+				throw new Exception("email invalido");
+			}
+			if (email.length() < 10) {
+				throw new Exception("email invalidso por ser ");
+			}
+			
+			this.email = email;
+			return true;
+		} catch (Exception e) {
+			System.err.println(e);
+			return false;
+		}
 	}
 
 	@Override
 	public String toString() {
 		return "Nome=" + nome + ", CPF=" + cpf + ", Email=" + email;
 	}
+
+	//#endregion
 }

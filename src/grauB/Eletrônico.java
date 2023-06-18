@@ -1,5 +1,7 @@
-public class Eletrodoméstico extends Produto {
+package grauB;
 
+public class Eletrônico extends Produto {
+	
 	private String descricao;
 
 	/**
@@ -10,12 +12,12 @@ public class Eletrodoméstico extends Produto {
 	 * @param quantidade
 	 * @param descricao Pode ser a respeito da marca ou características do produto.
 	 */
-	public Eletrodoméstico(String nome, double valor, int codigo, int quantidade, String descricao) {
+	public Eletrônico(String nome, double valor, int codigo, int quantidade, String descricao) {
 		super(nome, valor, codigo, quantidade);
 		this.descricao = descricao;
 	}
-
-	public Eletrodoméstico() {
+	
+	public Eletrônico() {
 		super();
 	}
 
@@ -29,7 +31,9 @@ public class Eletrodoméstico extends Produto {
 
 	@Override
 	public String toString() {
-		return "\nEletrodoméstico: " + super.toString() + " - Descrição= " + descricao;
+		return "\nEletrônico: "+ super.toString() + " - Descrição= " + descricao;
 	}
-
+	
+	
+	
 }

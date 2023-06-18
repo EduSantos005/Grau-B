@@ -1,3 +1,6 @@
+package grauB;
+
+
 public abstract class Produto {
 
 	private String nome;
@@ -35,16 +38,39 @@ public abstract class Produto {
 		return valor;
 	}
 
-	public void setValor(double valor) {
-		this.valor = valor;
+	public boolean setValor(double valor) {
+		try {
+			if (valor < 0) {
+				throw new Exception("Valor negativo");
+			}
+			
+			this.valor = valor;
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	public int getCodigo() {
 		return codigo;
 	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	/**
+	 * verifica se o codigo nao e negativos
+	 * @param codigo 
+	 * @autor ulisses953
+	 */
+	public boolean setCodigo(int codigo) {
+		try {
+			if (codigo < 0) {
+				throw new Exception("Valor negativo");
+			}
+			this.codigo = codigo;
+			return true;
+		} catch (Exception e) {
+			System.err.println(e.toString());
+			return false;
+		}
+		
 	}
 
 	public int getQuantidade() {
