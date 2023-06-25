@@ -6,25 +6,26 @@ public class Cliente {
 	private String cpf;
 	private String email;
 
-	//#region
+	// #region
 	public Cliente() {
 	}
 
 	/**
 	 * Dados importantes para se a ligação entre o usuário e a loja.
-	 * @param nome Nome do cliente.
-	 * @param cpf CPF do cliente.
+	 * @param nome  Nome do cliente.
+	 * @param cpf   CPF do cliente.
 	 * @param email Email do cliente.
 	 */
+
 	public Cliente(String nome, String cpf, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 	}
 
-	//#endregion
+	// #endregion
 
-	//#region get e set
+	// #region get e set
 
 	public String getNome() {
 		return nome;
@@ -48,18 +49,21 @@ public class Cliente {
 
 	/**
 	 * Funcao que visa realizar verificacoes do email do usuario
-	 * @param email 
+	 * @param email
 	 * @return
 	 */
 	public boolean setEmail(String email) {
 		try {
+			// verifica se a apenas 10 caracteres e gera um erro
+
 			if (!email.contains("@")) {
 				throw new Exception("email invalido");
 			}
+			// verifica se a apenas 10 caracteres e gera um erro
 			if (email.length() < 10) {
 				throw new Exception("email invalidso por ser ");
 			}
-			
+
 			this.email = email;
 			return true;
 		} catch (Exception e) {
@@ -73,5 +77,5 @@ public class Cliente {
 		return "Nome=" + nome + ", CPF=" + cpf + ", Email=" + email;
 	}
 
-	//#endregion
+	// #endregion
 }
