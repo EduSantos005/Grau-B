@@ -314,8 +314,8 @@ public class Main {
 			}
 			System.out.println("Valor Total: R$ " + String.format("%.2f", usuario.getValor()));
 
-			System.out.println("Digite sua senha novamente para confirmar a compra: ");
 			in.nextLine(); 
+			System.out.println("Digite sua senha novamente para confirmar a compra: ");
 
 			String senha = in.nextLine();
 
@@ -323,7 +323,6 @@ public class Main {
 			    if (cliente.confereSenha(senha) == false) {
 			        System.out.print("Senha incorreta!");
 			    }
-			    senha = in.nextLine(); 
 			} while (cliente.confereSenha(senha) == false);
 
 
