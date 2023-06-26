@@ -71,6 +71,12 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Função para registrar um objeto Admin
+	 * 
+	 * @return objeto adm 
+	 */
+	
 	public static Admin registerAdm() {
 
 		Scanner in = new Scanner(System.in);
@@ -94,6 +100,12 @@ public class Main {
 
 	}
 
+	/**
+	 * Função para registrar um objeto Cliente
+	 * 
+	 * @return objeto cliente
+	 */
+	
 	public static Cliente registerCliente() {
 		Scanner in = new Scanner(System.in);
 
@@ -152,7 +164,7 @@ public class Main {
 		int tipoConta = in.nextInt();
 
 		if (tipoConta == 1) {
-			Admin adm = Main.registerAdm();
+			Admin adm = Main.registerAdm(); //Instancia o objeto adm do Main
 			System.out.println("Olá " + adm.getNome());
 			int opcAdm;
 
@@ -167,7 +179,7 @@ public class Main {
 					int cod = in.nextInt();
 					in.nextLine(); // Consumir a quebra de linha pendente
 
-					if (empresa.localizar(cod) == null) {
+					if (empresa.localizar(cod) == null) { //Função retorna null se código não existe
 						System.out.println("Produto não existe!");
 					} else {
 						System.out.println(empresa.localizar(cod));
@@ -232,7 +244,7 @@ public class Main {
 					System.out.println(empresa);
 					break;
 				case 0:
-					break;
+					break; 
 				default:
 					System.out.println("Opção inválida!");
 					break;
@@ -241,7 +253,7 @@ public class Main {
 		}
 
 		if (tipoConta == 2) {
-			Cliente cliente = Main.registerCliente();
+			Cliente cliente = Main.registerCliente(); //Instancia o objeto cliente do Main
 
 			System.out.println();
 			System.out.println("Bem vindo ao Mercado Livre, segue abaixo os produtos disponíveis em nosso estoque: ");
@@ -319,14 +331,14 @@ public class Main {
 
 			String senha = in.nextLine();
 
-			do {
+			do {  
 			    if (cliente.confereSenha(senha) == false) {
 			        System.out.print("Senha incorreta!");
 			    }
 			} while (cliente.confereSenha(senha) == false);
 
 
-			System.out.println("CPF na nota? (s/n)");
+			System.out.println("CPF na nota? (s/n)"); 
 			char cpfNaNota = in.next().charAt(0);
 
 			if (cpfNaNota == 's' || cpfNaNota == 'S') {
