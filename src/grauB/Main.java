@@ -186,7 +186,7 @@ public class Main {
 					}
 					break;
 				case 2:
-					System.out.print("Nome do produto:");
+					System.out.print("Nome do produto: ");
 					String nome = in.nextLine();
 					System.out.print("Valor: ");
 					double valor = in.nextDouble();
@@ -204,7 +204,7 @@ public class Main {
 					case 1:
 						System.out.print("Tipo: ");
 						String tipo = in.nextLine();
-						System.out.print("Tamanho");
+						System.out.print("Tamanho: ");
 						String tamanho = in.nextLine();
 						System.out.print("Cor: ");
 						String cor = in.nextLine();
@@ -215,7 +215,7 @@ public class Main {
 					case 2:
 						System.out.print("Autor: ");
 						String autor = in.nextLine();
-						System.out.print("Gênero");
+						System.out.print("Gênero: ");
 						String genero = in.nextLine();
 
 						Produto livro = new Livro(nome, valor, codigo, quant, autor, genero);
