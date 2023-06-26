@@ -17,6 +17,11 @@ public class Estoque {
 		this.estoque = new ArrayList<Produto>();
 	}
 
+	/**
+	 * Função que localiza o produto pelo código, percorrendo toda a array 
+	 * @param codigo:int desejado para verificar se o produto existe 
+  	 * @return Produto p
+	 */
 	
 	public Produto localizar(int codigo) {
 		try {
