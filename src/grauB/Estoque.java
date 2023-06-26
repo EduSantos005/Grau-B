@@ -17,6 +17,21 @@ public class Estoque {
 		this.estoque = new ArrayList<Produto>();
 	}
 
+	
+	public Produto localizar(int codigo) {
+		try {
+			for (Produto p : estoque) {
+				if (p.getCodigo() == codigo) {
+					return p;
+				}
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+
 	/**
 	 * É um método que adiciona produtos no estoque
 	 * @param produto Ele confere se a quantidade do produto adicionado é maior que 0, e em seguida adiciona ao estoque 

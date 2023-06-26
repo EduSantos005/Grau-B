@@ -5,6 +5,7 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String email;
+	private String senha;
 
 	// #region
 	public Cliente() {
@@ -12,15 +13,17 @@ public class Cliente {
 
 	/**
 	 * Dados importantes para se a ligação entre o usuário e a loja.
+	 * 
 	 * @param nome  Nome do cliente.
 	 * @param cpf   CPF do cliente.
 	 * @param email Email do cliente.
 	 */
 
-	public Cliente(String nome, String cpf, String email) {
+	public Cliente(String nome, String cpf, String email, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
-		this.email = email;
+		this.senha = senha;
+		setEmail(email);
 	}
 
 	// #endregion
@@ -47,29 +50,45 @@ public class Cliente {
 		return email;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	/**
 	 * Funcao que visa realizar verificacoes do email do usuario
+	 * 
 	 * @param email
 	 * @return
 	 */
+	
+	public boolean confereSenha(String verificaSenha) {
+		
+		if(senha.equals(verificaSenha)) {
+			return true;
+		}
+		else return false;
+	}
 	public boolean setEmail(String email) {
-		try {
 			// verifica se a apenas 10 caracteres e gera um erro
 
 			if (!email.contains("@")) {
-				throw new Exception("email invalido");
+				System.out.println("Email invalido");
+				return false;
 			}
 			// verifica se a apenas 10 caracteres e gera um erro
 			if (email.length() < 10) {
-				throw new Exception("email invalidso por ser ");
+				System.out.println("Email precisa ter mais de 10 caracteres");
+				return false;
 			}
 
 			this.email = email;
+			
 			return true;
-		} catch (Exception e) {
-			System.err.println(e);
-			return false;
-		}
+		
 	}
 
 	@Override
