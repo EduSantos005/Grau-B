@@ -1,4 +1,5 @@
 package test;
+
 import grauB.*;
 
 import static org.junit.Assert.assertFalse;
@@ -16,5 +17,19 @@ public class ClienteTest {
         Cliente a = new Cliente();
         assertFalse(a.setEmail("ulisseskranzdamotta"));
         assertTrue(a.setEmail("ulisseskranzdamotta@gmail.com"));
+    }
+
+    /**
+     * @autor ulisses953
+     */
+    @Test
+    void testConfereSenha() {
+        var a = new Cliente();
+
+        a.setSenha("123");
+        assertTrue(a.confereSenha("123"));
+        assertFalse(a.confereSenha("222"));
+    
+
     }
 }

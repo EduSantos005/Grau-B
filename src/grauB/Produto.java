@@ -17,10 +17,10 @@ public abstract class Produto {
 	 */
 	
 	public Produto(String nome, double valor, int codigo, int quantidade) {
-		this.nome = nome;
-		this.valor = valor;
-		this.codigo = codigo;
-		this.quantidade = quantidade;
+		this.setNome(nome);
+		this.setValor(valor);
+		this.setCodigo(codigo);
+		this.setQuantidade(quantidade);;
 	}
 
 	public Produto() {
@@ -37,6 +37,11 @@ public abstract class Produto {
 	public double getValor() {
 		return valor;
 	}
+	/**
+	 * verifica se o valor nao e negativos
+	 * @param codigo 
+	 * @autor ulisses953
+	 */
 
 	public boolean setValor(double valor) {
 		try {

@@ -28,7 +28,7 @@ class MainTest {
 		int cpfNota = 4;
 		String cpf = "12345";
 		Carrinho car = new Carrinho();
-		assertFalse(main.notinha(cpfNota, cpf, car));
+		assertTrue(main.notinha(cpfNota, cpf, car));
 	}
 
 }

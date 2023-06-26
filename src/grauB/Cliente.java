@@ -67,10 +67,10 @@ public class Cliente {
 	
 	public boolean confereSenha(String verificaSenha) {
 		
-		if(senha.equals(verificaSenha)) {
-			return true;
+		if(!senha.equals(verificaSenha)) {
+			return false;
 		}
-		else return false;
+		return true;
 	}
 	public boolean setEmail(String email) {
 			// verifica se a apenas 10 caracteres e gera um erro
